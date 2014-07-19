@@ -1,0 +1,17 @@
+{
+  "name": "Createjs manifest converter",
+  "main": "index.html",
+  "description": "Convert your createjs manifest image path to base64 encoded value.",
+  "version": "0.1.0",
+  "window": {
+    "toolbar": true,
+    "width": 500,
+    "height": 430
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/leader22/nw-createjs-manifest-converter"
+    }
+  ]
+}
