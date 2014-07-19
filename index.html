@@ -7,15 +7,52 @@
 </head>
 <body>
 <h1>Createjs manifest converter</h1>
-<h2>Select main js file</h2>
-<input type="file" id="js-main-file">
 
-<h2>Select images dir</h2>
-<input type="file" id="js-image-dir" webkitdirectory directory>
+<div class="l-main-container">
+  <h2 class="l-header">0. Publish js and place like this</h2>
+  <div class="l-wrap">
+<pre class="info-wrap">
+path/to/your/working/dir
+├── images
+│   ├── aaa.png
+│   └── bbb.png
+└── swf.js
+</pre>
+  </div>
 
+  <h2 class="l-header">1. Select your swf.js file</h2>
+  <div class="l-wrap">
+    <input type="file" id="js-main-file">
+    <div id="js-main-file-info" class="info-wrap">Select your file.</div>
+  </div>
 
+  <h2 class="l-header">2. Enter converted file name</h2>
+  <div class="l-wrap">
+    <input type="text" id="js-output-file-name">.js
+  </div>
 
-<div id="js-exit" class="l-exit-btn">Exit</div>
+  <h2 class="l-header">3. Convert!</h2>
+  <div class="l-wrap m-last">
+    <div id="js-exec" class="l-btn m-exec">Exec</div>
+  </div>
+</div>
+
+<div id="js-exit" class="l-btn">Exit</div>
+
+<script type="text/x-tmpl" id="js-error-tmpl">
+<span class="txt-error">Selected file is not a .js file!</span>
+</script>
+
+<script type="text/x-tmpl" id="js-info-tmpl">
+<div class="l-box">
+  <div class="label">Work dir</div>
+  <div class="body"><%- workDir %></div>
+</div>
+<div class="l-box">
+  <div class="label">Target file</div>
+  <div class="body"><%- targetFile %></div>
+</div>
+</script>
 <script src="src/main.js"></script>
 </body>
 </html>

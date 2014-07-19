@@ -1,3 +1,7 @@
+/**
+ * Defaults
+ *
+ */
 * {
   margin: 0;
   padding: 0;
@@ -6,23 +10,20 @@ body {
   background-color: #eee;
   padding: 8px;
 }
-
-ul {
-  list-style: none;
-  padding-left: 16px;
-}
-
 h1 {
   margin-bottom: 8px;
   text-align: center;
 }
-
-ul + h2 {
-  margin-top: 8px;
+pre {
+  padding: 0;
 }
 
-small {
-  font-size: .5em;
+/**
+ * App styles
+ *
+ */
+.txt-error {
+  color: red;
 }
 
 .l-main-container {
@@ -33,23 +34,50 @@ small {
   padding: 8px;
 }
 
-.l-exit-btn {
+.l-wrap {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+.l-wrap.m-last {
+  margin-bottom: 0;
+}
+
+.l-wrap .info-wrap {
+  background-color: #eee;
+  padding: 8px;
+  margin: 8px auto;
+}
+
+.l-box > .label,
+.l-box > .body {
+  display: inline-block;
+}
+.l-box > .label {
+  width: 80px;
+}
+
+.l-header {
+  border-left: 4px solid #274a78;
+  text-indent: 4px;
+}
+
+.l-btn {
   background-color: #fff;
   border-right: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
   height: 40px;
   line-height: 40px;
   text-align: center;
-  transition: all .5s ease;
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  -ms-transition: all .5s ease;
 }
-.l-exit-btn:hover {
+.l-btn:active {
+  position: relative;
+  top: 1px;
+}
+.l-btn.m-exec {
   background-color: #0094c8;
   color: #fff;
 }
-.l-exit-btn:active {
+.l-btn.is-disabled {
+  pointer-events: none;
   opacity: .5;
 }
