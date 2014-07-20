@@ -150,7 +150,10 @@
     });
 
     var converted = converter.convert();
-    if (converted) {
+    if (converted.error) {
+      alert('Error!\n' + converted.error);
+      this.disableExecBtn();
+    } else {
       alert('Sucess!\nConverted file size is ' + __calcKB(converted.size) + 'KB');
     }
   }

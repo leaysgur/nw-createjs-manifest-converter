@@ -61,28 +61,30 @@ module.exports = (function(global) {
      *   converted file info
      */
     convert: function() {
-      var workDir = this.workDir;
-      var targetFile = workDir + '/' + this.targetFileName;
-
-      var targetFileStr = fs.readFileSync(targetFile, 'utf8');
-      var manifestArray = __getManifestArrayByTargetFileStr(targetFileStr);
-
-      // Convert path to base64 strings
-      var convertedManifestArray = manifestArray.map(function(e) {
-        var imgPath = workDir + '/' + e.src;
-        e.src = __getBase64StringByFilePath(imgPath);
-
-        return e;
-      });
-
-      // Finally write file.
-      var convertedManifest = MANIFEST_DELIMITER + JSON.stringify(convertedManifestArray, null, 2);
-      var destFileStr = targetFileStr.replace(MANIFEST_RE, convertedManifest);
-      var destFile = this.workDir + '/' + this.destFileName;
       try {
+        var workDir = this.workDir;
+        var targetFile = workDir + '/' + this.targetFileName;
+
+        var targetFileStr = fs.readFileSync(targetFile, 'utf8');
+        var manifestArray = __getManifestArrayByTargetFileStr(targetFileStr);
+
+        // Convert path to base64 strings
+        var convertedManifestArray = manifestArray.map(function(e) {
+          var imgPath = workDir + '/' + e.src;
+          e.src = __getBase64StringByFilePath(imgPath);
+
+          return e;
+        });
+
+        // Finally write file.
+        var convertedManifest = MANIFEST_DELIMITER + JSON.stringify(convertedManifestArray, null, 2);
+        var destFileStr = targetFileStr.replace(MANIFEST_RE, convertedManifest);
+        var destFile = this.workDir + '/' + this.destFileName;
+
         fs.writeFileSync(destFile, destFileStr);
         return fs.statSync(destFile);
-      } catch(e) { throw new Error(e); }
+
+      } catch(e) { return { error: e }; }
     }
   };
 
