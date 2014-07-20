@@ -149,8 +149,9 @@
       fileName: this.$outputFileName.value || null
     });
 
-    if (converter.convert()) {
-      alert('Success!');
+    var converted = converter.convert();
+    if (converted) {
+      alert('Sucess!\nConverted file size is ' + __calcKB(converted.size) + 'KB');
     }
   }
 
@@ -215,5 +216,21 @@
   function __isJsFile(fileObj) {
     return fileObj.type === CONST.FILE_TYPE.JS;
   }
+
+  /**
+   * Calc n byte to n KB
+   *
+   * @name calcKB
+   * @param {Number} byte
+   *   byte
+   * @return {Number}
+   *   kilo byte
+   */
+  function __calcKB(byte) {
+    byte = byte|0;
+
+    return (byte / 1024).toFixed(2);
+  }
+
 
 }(this.self || global));

@@ -57,8 +57,8 @@ module.exports = (function(global) {
      * Convert and export file.
      *
      * @name convert
-     * @return {Boolean}
-     *   convert success or NOT
+     * @return {Object}
+     *   converted file info
      */
     convert: function() {
       var workDir = this.workDir;
@@ -81,7 +81,7 @@ module.exports = (function(global) {
       var destFile = this.workDir + '/' + this.destFileName;
       try {
         fs.writeFileSync(destFile, destFileStr);
-        return true;
+        return fs.statSync(destFile);
       } catch(e) { throw new Error(e); }
     }
   };
