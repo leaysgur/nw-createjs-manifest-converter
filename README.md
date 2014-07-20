@@ -1,12 +1,15 @@
 nw-createjs-manifest-converter
 ==============================
 
-Convert createjs published file to converted manifest one.
+## そもそも
+FlashCC for createjsで書きだした``.js``ファイルには、
+使用している画像ファイルへのパスがマニフェストとして記述されています。
 
-- - - 
+ただその場合、Flashを再生するまでにその画像を全てロードする必要があり、
+モバイル環境ではこのリクエスト数がかなりのコストとなります。
 
-- [ ] ブログかく
-- [ ] READMEちゃんと
-- [ ] デザインもうちょい
-- [ ] リファクタ
-- [ ] デプロイ用に固める
+そこで、あらかじめ画像を全てbase64文字列化して使おうというわけです。
+
+この``createjs-manifest-converter``を使うと、
+FlashCC for createjsで書きだした``.js``ファイル内のマニフェストを
+base64文字列に書き換えることができます。
