@@ -36,7 +36,7 @@ pre {
 
 .l-wrap {
   padding: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .l-wrap.m-last {
   margin-bottom: 0;
@@ -44,6 +44,7 @@ pre {
 
 .l-wrap .info-wrap {
   background-color: #eee;
+  border: 1px solid #ccc;
   padding: 8px;
   margin: 8px auto;
 }
@@ -80,4 +81,5 @@ pre {
 .l-btn.is-disabled {
   pointer-events: none;
   opacity: .5;
+  color: #ccc;
 }

@@ -4,9 +4,9 @@
   "description": "Convert your createjs manifest image path to base64 encoded value.",
   "version": "0.1.0",
   "window": {
-    "toolbar": false,
+    "toolbar": true,
     "width": 600,
-    "height": 600
+    "height": 580
   },
   "repositories": [
     {
