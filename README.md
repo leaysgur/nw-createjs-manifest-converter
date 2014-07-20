@@ -1,7 +1,6 @@
 nw-createjs-manifest-converter
 ==============================
 
-## そもそも
 FlashCC for createjsで書きだした``.js``ファイルには、
 使用している画像ファイルへのパスがマニフェストとして記述されています。
 
@@ -13,3 +12,9 @@ FlashCC for createjsで書きだした``.js``ファイルには、
 この``createjs-manifest-converter``を使うと、
 FlashCC for createjsで書きだした``.js``ファイル内のマニフェストを
 base64文字列に書き換えることができます。
+
+## 使い方
+- [node-webkit](https://github.com/rogerwang/node-webkit)をインストール
+- [実行ファイル](https://github.com/leader22/nw-createjs-manifest-converter/raw/master/dist/cjs-manifest-converter.nw)をダウンロードして保存
+- ダウンロードしたアプリケーションを起動
+- あとは、画面表示に従って使う
